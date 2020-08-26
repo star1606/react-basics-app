@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const Ninjas = ({ ninjas }) => {
+const Ninjas = ({ ninjas, deleteNinja }) => {
   // array를 만든다
   //   const ninjaList = ninjas.map((ninja) => {
   //     if (ninja.age >= 30) {
@@ -22,6 +22,13 @@ const Ninjas = ({ ninjas }) => {
         <div>name : {ninja.name}</div>
         <div>age : {ninja.age}</div>
         <div>belt : {ninja.belt}</div>
+        <button
+          onClick={() => {
+            deleteNinja(ninja.id);
+          }}
+        >
+          Delete ninja
+        </button>
       </div>
     ) : null;
   });
